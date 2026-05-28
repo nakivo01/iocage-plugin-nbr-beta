@@ -5,8 +5,7 @@ SHA256="fd7b717b957adc66b75f4f899b70761d7a3b3d11a9d28addbad211e42a3e2bfa"
 PRODUCT_ROOT="/usr/local/nakivo"
 INSTALL="inst.sh"
 
-pkg install -y ca_root_nss
-fetch -o $INSTALL "$URL"
+fetch --no-verify-peer -o $INSTALL "$URL"
 if [ $? -ne 0 -o ! -e $INSTALL ]; then
     echo "ERROR: Failed to get $PRODUCT installer"
     rm $INSTALL >/dev/null 2>&1
