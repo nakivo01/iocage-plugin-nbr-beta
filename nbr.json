@@ -9,9 +9,7 @@
         "mount_procfs": "1",
         "boot": "on"
     },
-    "pkgs": [
-        "ftp/curl"
-    ],
+    "pkgs": [],
     "packagesite": "http://pkg.freebsd.org/${ABI}/quarterly",
     "fingerprints": {
         "plugin-default": [
