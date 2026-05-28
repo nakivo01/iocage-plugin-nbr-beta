@@ -1,18 +1,12 @@
-#!/bin/sh
-
 PRODUCT='NAKIVO Backup & Replication (Beta)'
-<<<<<<< HEAD
-URL="https://d111xps0uy3x00.cloudfront.net/res/product/NAKIVO_Backup_Replication_v11.2.0.102454_Installer-TRIAL.sh"
-SHA256="d3dcbe5cf580b208bdfe7944242e69a794183cf7a0894969c84989f83d0dc43b"
-=======
-URL="https://d111xps0uy3x00.cloudfront.net/res/product/custom/11.2.1/NAKIVO_Backup_Replication_v11.2.1.104370_Installer-TRIAL.sh"
-SHA256="07e339c5340187fc830a5acf143388fa6a836378a9e6b41afa505ae62ede5dbd"
->>>>>>> 7da3ccd (NAKIVO Backup & Replication 11.2.1 (Beta))
+URL="https://d111xps0uy3x00.cloudfront.net/res/product/NAKIVO_Backup_Replication_v11.2.1.104620_Installer-TRIAL.sh"
+SHA256="fd7b717b957adc66b75f4f899b70761d7a3b3d11a9d28addbad211e42a3e2bfa"
 
 PRODUCT_ROOT="/usr/local/nakivo"
 INSTALL="inst.sh"
 
-curl --fail --tlsv1.2 -o $INSTALL $URL
+pkg install -y ca_root_nss
+fetch -o $INSTALL "$URL"
 if [ $? -ne 0 -o ! -e $INSTALL ]; then
     echo "ERROR: Failed to get $PRODUCT installer"
     rm $INSTALL >/dev/null 2>&1
